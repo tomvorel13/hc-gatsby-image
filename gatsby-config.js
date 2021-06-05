@@ -2,6 +2,21 @@ require("dotenv").config({
   path: `.env`,
 })
 
+const getDeliveryClientConfig = () => {
+  let config = {
+    projectId: process.env.KONTENT_PROJECT_ID,
+    includeTypes: true,
+    languageCodenames: [`default`],
+  }
+
+  if (process.env.KONTENT_PREVIEW_API_KEY) {
+    config.usePreviewUrl = true
+    config.authorizationKey = process.env.KONTENT_PREVIEW_API_KEY
+  }
+
+  return config
+}
+
 module.exports = {
   siteMetadata: {
     title: `Gatsby Default Starter`,
@@ -17,8 +32,7 @@ module.exports = {
     {
       resolve: `@kentico/gatsby-source-kontent`,
       options: {
-        projectId: process.env.KONTENT_PROJECT_ID,
-        languageCodenames: [`default`],
+        ...getDeliveryClientConfig(),
       },
     },
     {
