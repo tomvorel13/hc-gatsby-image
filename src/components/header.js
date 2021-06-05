@@ -4,14 +4,11 @@ import { Link, useStaticQuery, graphql } from "gatsby"
 const Header = () => {
   const data = useStaticQuery(graphql`
     query HeaderQuery {
-      allKontentItemNavigationItem {
-        nodes {
-          elements {
-            text {
-              value
-            }
-            url {
-              value
+      kontentItemNavigation {
+        elements {
+          items {
+            value {
+              ...NavigationItem
             }
           }
         }
@@ -19,7 +16,7 @@ const Header = () => {
     }
   `)
 
-  const menuItems = data.allKontentItemNavigationItem.nodes
+  const menuItems = data.kontentItemNavigation.elements.items.value
 
   return (
     <header>
