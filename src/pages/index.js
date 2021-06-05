@@ -1,10 +1,11 @@
 import * as React from "react"
 import Layout from "../components/layout"
+import '../styles/main.scss'
 
-const IndexPage = () => (
+const Index = () => (
   <Layout>
-		<h1>Hi from the Index page</h1>
+		<h1>Hi from the Raw page</h1>
   </Layout>
 )
 
-export default IndexPage
+export default Index
