@@ -19,9 +19,9 @@ const getDeliveryClientConfig = () => {
 
 module.exports = {
   siteMetadata: {
-    title: `Gatsby Image Gallery`,
-    description: `Compare performance of raw image files vs images optimized via Gatsby Image Plugin`,
-    author: `Tom Vorel`,
+    title: `Gatsby Default Starter`,
+    description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
+    author: `@gatsbyjs`,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
