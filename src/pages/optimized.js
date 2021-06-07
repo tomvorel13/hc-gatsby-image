@@ -19,7 +19,9 @@ const Optimized = ({ data }) => {
               width={image.elements.file.value[0]?.width}
               height={image.elements.file.value[0]?.height}
               alt={image.elements.file.value[0]?.description}
+							backgroundColor="#f4f4f4"
             />
+            <span>{image.elements.file.value[0]?.description}</span>
           </div>
         )
       })}

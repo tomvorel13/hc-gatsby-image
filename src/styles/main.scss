@@ -28,6 +28,12 @@ header {
 
 .image {
   max-width: 500px;
+
+	span {
+		display: block;
+		text-align: center;
+		margin-top: 8px;
+	}
 }
 
 // Masonry Grid Layout

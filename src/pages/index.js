@@ -1,7 +1,7 @@
 import * as React from "react"
 import { graphql } from "gatsby"
 
-// Local 
+// Local
 import Layout from "../components/layout"
 import "../styles/main.scss"
 
@@ -17,6 +17,7 @@ const Index = ({ data }) => {
               src={image.elements.file.value[0]?.url}
               alt={image.elements.file.value[0]?.description}
             />
+            <span>{image.elements.file.value[0]?.description}</span>
           </div>
         )
       })}
