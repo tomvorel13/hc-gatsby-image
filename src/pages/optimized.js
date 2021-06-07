@@ -1,12 +1,44 @@
-import React from 'react'
-import Layout from '../components/layout'
+import React from "react"
+import { graphql } from "gatsby"
+import { ImageElement } from "@kentico/gatsby-kontent-components"
 
-const Optimized = () => {
-	return (
-		<Layout>
-			<h1>Hi from Optimized page</h1>
-		</Layout>
-	)
+// Local
+import Layout from "../components/layout"
+import "../styles/main.scss"
+
+const Optimized = ({ data }) => {
+  const images = data.kontentItemGallery.elements.images.value
+
+  return (
+    <Layout>
+      {images.map(image => {
+        return (
+          <div className="image">
+            <ImageElement
+              image={image.elements.file.value[0]}
+              width={image.elements.file.value[0]?.width}
+              height={image.elements.file.value[0]?.height}
+              alt={image.elements.file.value[0]?.description}
+            />
+          </div>
+        )
+      })}
+    </Layout>
+  )
 }
+
+export const query = graphql`
+  query OptimizedPageQuery {
+    kontentItemGallery {
+      elements {
+        images {
+          value {
+            ...Image
+          }
+        }
+      }
+    }
+  }
+`
 
 export default Optimized
