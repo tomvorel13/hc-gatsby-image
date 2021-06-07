@@ -4,26 +4,30 @@ import { ImageElement } from "@kentico/gatsby-kontent-components"
 
 // Local
 import Layout from "../components/layout"
+import Seo from "../components/seo"
 import "../styles/main.scss"
 
 const Optimized = ({ data }) => {
   const images = data.kontentItemGallery.elements.images.value
 
   return (
-    <Layout>
-      {images.map(image => {
-        return (
-          <div className="image">
-            <ImageElement
-              image={image.elements.file.value[0]}
-              width={image.elements.file.value[0]?.width}
-              height={image.elements.file.value[0]?.height}
-              alt={image.elements.file.value[0]?.description}
-            />
-          </div>
-        )
-      })}
-    </Layout>
+    <>
+      <Seo title="Optimized Images Gallery" />
+      <Layout>
+        {images.map(image => {
+          return (
+            <div className="image">
+              <ImageElement
+                image={image.elements.file.value[0]}
+                width={image.elements.file.value[0]?.width}
+                height={image.elements.file.value[0]?.height}
+                alt={image.elements.file.value[0]?.description}
+              />
+            </div>
+          )
+        })}
+      </Layout>
+    </>
   )
 }
 
