@@ -12,12 +12,16 @@ const Index = ({ data }) => {
     <Layout>
       {images.map(image => {
         return (
-          <div className="image">
-            <img
-              src={image.elements.file.value[0]?.url}
-              alt={image.elements.file.value[0]?.description}
-            />
-            <span>{image.elements.file.value[0]?.description}</span>
+          <div className="card">
+            <div className="card__image">
+              <img
+                src={image.elements.file.value[0]?.url}
+                alt={image.elements.file.value[0]?.description}
+              />
+            </div>
+            <span className="card__text">
+              {image.elements.file.value[0]?.description}
+            </span>
           </div>
         )
       })}

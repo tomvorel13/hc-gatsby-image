@@ -4,7 +4,7 @@ import Header from "./header"
 import "../styles/main.scss"
 
 const Layout = ({ children }) => {
-	const breakpointColumnsObj = {
+  const breakpointColumnsObj = {
     default: 4,
     1400: 3,
     770: 2,
