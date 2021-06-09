@@ -1,5 +1,4 @@
 @import "./normalize.scss";
-@import "./grid.scss";
 
 body {
   font-family: Lato, sans-serif;
@@ -28,6 +27,9 @@ header {
 }
 
 .card {
+	max-width: 800px;
+	margin: 0 auto 64px auto;
+
 	&__image {
 		overflow: hidden;
 	}
