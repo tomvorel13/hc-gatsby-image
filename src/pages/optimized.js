@@ -18,7 +18,6 @@ const Optimized = ({ data }) => {
               <ImageElement
                 image={image.elements.file.value[0]}
                 alt={image.elements.file.value[0]?.description}
-                backgroundColor="#f4f4f4"
               />
             </div>
             <span className="card__text">
