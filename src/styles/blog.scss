@@ -1,0 +1,44 @@
+.cards {
+  display: grid;
+  grid-template-columns: repeat(1, minmax(300px, 1fr));
+  grid-template-rows: auto;
+  gap: 16px;
+  width: 100%;
+
+  @media screen and (min-width: 620px) {
+    grid-template-columns: repeat(2, minmax(300px, 1fr));
+  }
+
+  @media screen and (min-width: 930px) {
+    grid-template-columns: repeat(3, minmax(300px, 1fr));
+  }
+
+  .card {
+    align-self: stretch;
+    display: flex;
+    flex-direction: column;
+
+    &__body {
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+      background-color: #f4f4f4;
+      padding: 16px;
+    }
+
+    &__title {
+      margin: 0 0 16px 0;
+    }
+
+    &__perex {
+      margin: 0 0 16px 0;
+    }
+
+    &__link {
+      text-decoration: none;
+      color: black;
+      font-weight: 800;
+      margin-top: auto;
+    }
+  }
+}

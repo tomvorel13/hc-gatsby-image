@@ -11,17 +11,22 @@ const Optimized = ({ data }) => {
 
   return (
     <Layout>
-      {images.map(image => {
+      {images.map(item => {
         return (
-          <div className="card">
-            <div className="card__image">
+          <div className="mountain">
+            <div className="mountain__image">
               <ImageElement
-                image={image.elements.file.value[0]}
-                alt={image.elements.file.value[0]?.description}
+                width={800}
+                image={item.elements.file.value[0]}
+                alt={item.elements.file.value[0]?.description}
+                backgroundColor="#f4f4f4"
+                options={{
+                  quality: 50,
+                }}
               />
             </div>
-            <span className="card__text">
-              {image.elements.file.value[0]?.description}
+            <span className="mountain__text">
+              {item.elements.file.value[0]?.description}
             </span>
           </div>
         )

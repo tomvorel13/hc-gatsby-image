@@ -22,7 +22,11 @@ const Header = () => {
     <header>
       {menuItems.map((item, index) => {
         return (
-          <Link key={index} to={item.elements.url.value}>
+          <Link
+            key={index}
+            to={item.elements.url.value}
+            activeClassName="active"
+          >
             {item.elements.text.value}
           </Link>
         )

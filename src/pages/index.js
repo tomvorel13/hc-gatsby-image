@@ -7,20 +7,20 @@ import "../styles/main.scss"
 
 const Index = ({ data }) => {
   const images = data.kontentItemGallery.elements.images.value
-  // console.log(data)
+	
   return (
     <Layout>
-      {images.map(image => {
+      {images.map((item, index) => {
         return (
-          <div className="card">
-            <div className="card__image">
+          <div key={index} className="mountain">
+            <div className="mountain__image">
               <img
-                src={image.elements.file.value[0]?.url}
-                alt={image.elements.file.value[0]?.description}
+                src={item.elements.file.value[0]?.url}
+                alt={item.elements.file.value[0]?.description}
               />
             </div>
-            <span className="card__text">
-              {image.elements.file.value[0]?.description}
+            <span className="mountain__text">
+              {item.elements.file.value[0]?.description}
             </span>
           </div>
         )
