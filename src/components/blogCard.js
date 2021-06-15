@@ -8,7 +8,7 @@ const BlogCard = ({ title, perex, image, slug }) => {
     <div className="card">
       <div className="card__image">
         <ImageElement
-          width={450}
+          width={550}
           height={200}
           image={image.value[0]}
           alt={image.value[0]?.description}
