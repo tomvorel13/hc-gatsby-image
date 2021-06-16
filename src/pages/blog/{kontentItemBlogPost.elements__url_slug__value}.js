@@ -11,7 +11,6 @@ import "../../styles/blog.scss"
 
 const BlogPost = ({ data }) => {
   const post = data.post.edges[0]?.node.elements
-  console.log(post, "post")
 
   return (
     <Layout>
@@ -57,8 +56,6 @@ const BlogPost = ({ data }) => {
             }
           }}
           resolveLink={(link, domNode) => {
-            console.log(link, "link")
-            console.log(domNode, "link")
             const type = link.type
 
             switch (type) {
