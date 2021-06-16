@@ -50,22 +50,6 @@ export const query = graphql`
           url_slug {
             value
           }
-          body {
-            value
-            links {
-              codename
-              link_id
-              type
-              url_slug
-            }
-            images {
-              description
-              image_id
-              height
-              url
-              width
-            }
-          }
         }
       }
     }
