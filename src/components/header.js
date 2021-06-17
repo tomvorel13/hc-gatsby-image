@@ -17,15 +17,18 @@ const Header = () => {
   `)
 
   const menuItems = data.kontentItemNavigation.elements.items.value
-
+	
   return (
-    <header>
+		<header>
       {menuItems.map((item, index) => {
+				const pathIsRoot = item.elements.url.value === "/"
+				
         return (
           <Link
             key={index}
             to={item.elements.url.value}
             activeClassName="active"
+            partiallyActive={pathIsRoot ? false : true}
           >
             {item.elements.text.value}
           </Link>
