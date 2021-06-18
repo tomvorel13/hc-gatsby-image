@@ -8,7 +8,7 @@ const getDeliveryClientConfig = () => {
     includeTypes: true,
     languageCodenames: [`default`],
     usePreviewUrl: true,
-    authorizationKey: process.env.KONTENT_PREVIEW_API_KEY,
+    authorizationKey: process.env.KONTENT_PREVIEW_KEY,
   }
 
   return config
