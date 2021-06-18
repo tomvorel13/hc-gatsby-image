@@ -24,7 +24,7 @@ const Blog = ({ data }) => {
 
 export const query = graphql`
   query BlogQuery {
-    posts: allKontentItemBlogPost {
+    posts: allKontentItemBlogPost(sort: { fields: system___last_modified }) {
       nodes {
         system {
           id
