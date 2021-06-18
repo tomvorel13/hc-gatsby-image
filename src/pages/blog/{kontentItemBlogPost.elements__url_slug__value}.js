@@ -36,11 +36,13 @@ const BlogPost = ({ data }) => {
           linkedItems={post.body.modular_content}
           resolveImage={image => {
             return (
-              <ImageElement
-                image={image}
-                alt={image.description ? image.description : image.name}
-                width={800}
-              />
+              <div className="post__image">
+                <ImageElement
+                  image={image}
+                  alt={image.description ? image.description : image.name}
+                  width={800}
+                />
+              </div>
             )
           }}
           resolveLinkedItem={linkedItem => {
